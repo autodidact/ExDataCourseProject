@@ -73,7 +73,15 @@ This column contains the observation mean as defined in the original codebook.
 ### std 
 This column contains the observation standard deviation as defined in the original codebook.
 
-## Analysis
+## Data cleaning and transformation
+Following steps were performed to clean and transform the data set into a tidy dataset:
+* adding subject and activity columns to the feature data
+* mergin the test and training data
+* The data was melt to obtain the one observation per column characteristic of a tidy data set.
+* Using pattern matching, mean and std deviation were decast into a single row to obtain the "all variables of an observation in single row"
+  characteristic of a tidy data set.
+
+## How to run the scripts
 Copy the file run_analysis.R to the directory containing the dataset. To be clear, there should be an unzipped directory "UCI HAR Dataset" present. Running the script
 will produce two files:
 * tidy_data.txt - A tidy set produced from the given data set
