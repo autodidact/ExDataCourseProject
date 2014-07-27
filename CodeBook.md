@@ -32,7 +32,7 @@ This column is preserved as in the original dataset and corresponds to the id of
 Our tidy dataset contains only variables for which the mean and standard observation was recorded. Other variables have been stripped from the data set.
 Also, we have cleaned up the variables in the following way. Two observations which were listed as tBodyAcc-mean()-X and
 tBodyAcc-std()-X have been normalized now as a single observations on tBodyAcc-X variable. 
-Following is a complete list of 33 variables, which occur in this column
+Following is a complete list of 33 types of observations, which occur in this column
 * "fBodyAccJerk-X"       
 * "fBodyAccJerk-Y"       
 * "fBodyAccJerk-Z"       
@@ -68,12 +68,20 @@ Following is a complete list of 33 variables, which occur in this column
 * "tGravityAcc-Z"      
 
 ### mean
-This column contains the observation mean as defined in the original codebook.
+This column contains the observation mean as defined in the original codebook. It is normalized to [-1,1].
 
 ### std 
-This column contains the observation standard deviation as defined in the original codebook.
+This column contains the observation standard deviation as defined in the original codebook. It is normalized to [-1,1].
 
-## Analysis
+## Data cleaning and transformation
+Following steps were performed to clean and transform the data set into a tidy dataset:
+* adding subject and activity columns to the feature data
+* mergin the test and training data
+* The data was melt to obtain the one observation per column characteristic of a tidy data set.
+* Using pattern matching, mean and std deviation were decast into a single row to obtain the "all variables of an observation in single row"
+  characteristic of a tidy data set.
+
+## How to run the scripts
 Copy the file run_analysis.R to the directory containing the dataset. To be clear, there should be an unzipped directory "UCI HAR Dataset" present. Running the script
 will produce two files:
 * tidy_data.txt - A tidy set produced from the given data set
