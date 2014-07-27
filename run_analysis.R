@@ -64,7 +64,7 @@ tidy_data$activity = factor(pre_tidy_data$activity, labels=activity_labels$name)
 write.table(tidy_data, file="tidy_data.txt", col.names=TRUE, row.names=FALSE)
 
 # We can also calculate the average of every variable per subject and per activity
-tidy_data_aggregate = aggregate(cbind(mean, std) ~ subject + activity, data=tidy_data, FUN=mean)
+tidy_data_aggregate = aggregate(cbind(mean, std) ~ subject + activity + observation, data=tidy_data, FUN=mean)
 
 write.table(tidy_data_aggregate, file="tidy_data_agg.txt", col.names=TRUE, row.names=FALSE)
 
