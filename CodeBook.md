@@ -26,7 +26,7 @@ and mapped them to the strings as follows:
 
 
 ### subject
-This column is preserved as in the original dataset and corresponds to the subject on whom the observation was recorded.
+This column is preserved as in the original dataset and corresponds to the id of the subject on whom the observation was recorded.
 
 ### observation
 Our tidy dataset contains only variables for which the mean and standard observation was recorded. Other variables have been stripped from the data set.
@@ -77,4 +77,6 @@ This column contains the observation standard deviation as defined in the origin
 Copy the file run_analysis.R to the directory containing the dataset. To be clear, there should be an unzipped directory "UCI HAR Dataset" present. Running the script
 will produce two files:
 * tidy_data.txt - A tidy set produced from the given data set
-* tidy_data_agg.txt - Another tidy data set which calculates the mean aggregates for all the variable for each activity and subject
+* tidy_data_agg.txt - Another tidy data set which calculates the mean aggregates for all the variable for each activity, subject and variable.
+
+
